@@ -1,6 +1,4 @@
 import { Component } from 'react';
-import '../components/styles.css';
-
 import { toast } from 'react-toastify';
 
 class Searchbar extends Component {
@@ -9,15 +7,14 @@ class Searchbar extends Component {
   };
 
   handleChange = e => {
-    // console.log(e.target.value);
     this.setState({ value: e.target.value.toLowerCase() });
-    // console.log(this.state);
   };
 
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.value.trim() === '') {
       toast.error('Введите корректное название!');
+      this.props.clearRender();
       return;
     }
 
@@ -36,7 +33,6 @@ class Searchbar extends Component {
           <input
             className="SearchForm-input"
             type="text"
-            // name="value"
             value={this.state.value}
             onChange={this.handleChange}
             autoComplete="off"

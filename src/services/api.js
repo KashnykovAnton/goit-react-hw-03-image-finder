@@ -19,6 +19,9 @@ export class FetchApi {
   set page(value) {
     return (this._page += value);
   }
+  incrementPage() {
+    return (this._page += 1);
+  }
   resetPage() {
     return (this._page = 1);
   }

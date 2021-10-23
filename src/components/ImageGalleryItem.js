@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import '../components/styles.css';
 
 class ImageGalleryItem extends Component {
   onClickGalleryItem = () => {
