@@ -87,6 +87,8 @@ class App extends Component {
         console.log(err);
         this.setState({ status: 'error' });
       });
+
+    console.log('сработал handleClick');
   };
 
   render() {
