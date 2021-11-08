@@ -39,7 +39,6 @@ class App extends Component {
           this.setState({ status: 'error' });
         });
     }
-    this.windowScroll();
   }
 
   windowScroll = () => {
@@ -86,9 +85,10 @@ class App extends Component {
       .catch(err => {
         console.log(err);
         this.setState({ status: 'error' });
+      })
+      .finally(() => {
+        this.windowScroll();
       });
-
-    console.log('сработал handleClick');
   };
 
   render() {
